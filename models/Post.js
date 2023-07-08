@@ -19,3 +19,15 @@ Post.init({
     allowNull: false
   }
 },
+{
+  //pass in our sequelize connection
+  sequelize,
+  //freeze table name to prevent converting it into plural
+  freezeTableName: true,
+  //we don't want timestamp to show everytime
+  timestamps: false,
+  //name of our table
+  modelName: 'post'
+})
+
+module.exports = Post;
