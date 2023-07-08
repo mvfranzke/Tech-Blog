@@ -25,7 +25,35 @@ try {
 });
 
 //logins a user
-router.post("/login", async (req, res) => {});
+router.post("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: {
+        username: req.body.username,
+      },
+    });
+
+    if (!user) {
+      res.status(400).json({ message: "User not found!" });
+    }
+
+    const validPw = user.checkPassword(req.body.password);
+
+    if (!validPw) {
+      res.status(400).json({ message: "User not found!" });
+    }
+
+    req.session.save(() => {
+      req.session.userId = user.id;
+      req.session.username = user.username;
+      req.session.loggedIn = true;
+
+      res.json(user);
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 
