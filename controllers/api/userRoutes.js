@@ -69,6 +69,5 @@ router.post("/logout", async (req, res) => {
 });
 
 
-
 //export router to be used in other file
 module.exports = router;
