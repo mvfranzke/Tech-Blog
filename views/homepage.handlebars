@@ -1,0 +1,30 @@
+<div>
+  <button id="logOutUser">Logout</button>
+  <hr>
+  <hr>
+  <h5>Create a new post</h5>
+  <form>
+    <p>
+      <label for="title">Post Title</label>
+      <input type="text" name="title" id="title">
+    </p>
+    <p>
+      <label for="body">Content</label>
+      <textarea name="body" id="body" cols="30" rows="10"></textarea>
+    </p>
+    <button id="createPost">Save</button>
+  </form>
+  <hr>
+  {{#each posts as |post|}}
+  <hr>
+  <div>
+    <h3>{{post.title}}</h3>
+    <h5>User:{{post.user.username}}</h5>
+    <p>{{post.body}}</p>
+    <a href="/post/{{post.id}}">View Post</a>
+  </div>
+  <hr>
+  {{/each}}
+</div>
+
+<script src="../public/js/createPost.js"></script>
