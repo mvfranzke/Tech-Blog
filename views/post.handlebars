@@ -1,27 +1,37 @@
-<div>
+<button id="return" class="btn btn-primary">Return</button>
+
+<div class= "auth-container">
+
   <hr>
   <div>
-    <h3>{{title}}</h3>
-    <h5>User: {{user.username}}</h5>
-    <p>{{body}}</p>
+    <h3>Title: {{title}}</h3>
+    <h5>Author: {{user.username}}</h5>
+    <p>Content: {{body}}</p>
   </div>
   <hr>
   <hr>
-  <h5>Update</h5>
+  <h5>Edit Post</h5>
   <form>
-    <p>
-      <label for="title">Post Title</label>
-      <input type="text" name="title" id="title" placeholder="{{title}}">
-    </p>
-    <p>
-      <label for="body">Content</label>
-      <textarea name="body" id="body" cols="30" rows="10" placeholder="{{body}}"></textarea>
-    </p>
-    <button id="editPost" data-id="{{id}}">Update</button>
-  </form>
-  <button id="deletePost" data-id="{{id}}">Delete</button>
-  <hr>
-  <a href="/">Back</a>
+
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="{{title}}" id="title" style="height: 50px"></textarea>
+          <label for="floatingTextarea2">Editing: {{title}}</label>
+        </div>
+
+
+        <br>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="body" style="height: 150px"></textarea>
+          <label for="floatingTextarea2">Editing Content of {{title}}</label>
+        </div>
+
+<div class="button-container">
+  <button id="editPost" class="btn btn-primary" data-id="{{id}}">Edit Post</button>
+  <button id="deletePost" class="btn btn-primary" data-id="{{id}}">Delete Post</button>
+</div>
+    
+    </form>
+
 </div>
 
-<script src= "../public/js/editPost.js"></script>
+<script src="../js/editPost.js"></script>

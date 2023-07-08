@@ -1,0 +1,74 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  
+}
+
+header {
+  background-image: url("../images/background.jpg");
+  height: 150px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+}
+
+h1 {
+  margin-top: 30px;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.796);
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f5f5f5;
+  background-image: url("../images/blue-tech-blog-background.jpg");
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.form-container {
+  width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  height: 30vh;
+  margin: 10px;
+  background-color: #f5f5f5;
+}
+
+.auth-container{
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  height: 30vh;
+  margin: 10px;
+  margin-top: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.454);
+  
+}
+
+.button-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.btn {
+  margin-right: 10px;
+}

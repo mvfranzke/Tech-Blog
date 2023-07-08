@@ -1,14 +1,14 @@
+//
 
+//function with req, req and another one called next
+//next allows us to trigger and run the next function, which will be the next req and res right after it
 const withAuth = (req, res, next) => {
-  // Check if there is an active session (user is logged in)
+  //if there's no session active, you'll be redirected to login first, otherwise if there's a user id you can move on
   if (!req.session.userId) {
-    // If there is no active session, redirect the user to the login page ("/auth" in this case)
-    res.redirect("/auth");
+    res.redirect("/auth"); // ????????????????????????/
   } else {
-    // If there is an active session, proceed to the next middleware or route handler
     next();
   }
 };
 
-//export withAuth to be used in other file
 module.exports = withAuth;

@@ -1,32 +1,50 @@
-<div>
-  <hr>
-  <h5>Sign-Up</h5>
-  <form>
-    <p>
-      <label for="username">New Username</label>
-      <input type="text" name="username" id="username" placeholder="johndoe">
-    </p>
-    <p>
-      <label for="password">New Password</label>
-      <input type="password" name="password" id="password">
-    </p>
-    <button id="registerUser">Sign-Up</button>
-  </form>
-  <hr>
-  <hr>
-  <h5>Login</h5>
-  <form>
-    <p>
-      <label for="lUsername">Username</label>
-      <input type="text" name="lUsername" id="lUsername" placeholder="enter your username here">
-    </p>
-    <p>
-      <label for="lPassword">Password</label>
-      <input type="password" name="lPassword" id="lPassword" placeholder="enter your password here">
-    </p>
-    <button id="loginUser">Login</button>
-  </form>
-  <hr>
+<div class = "auth-container">
+  <p class="font-monospace">Welcome to Tech Blog!</p>
+
+  <p class="font-monospace">Feel free to use this space to write and read technical concepts, recent advancements and new technolies. This is a platform where everyone can share and add new knowledge in the tech world.</p> 
+
+  <p class="font-monospace">Just simply login so you can start writing your blog, or if you don't have an account yet, register below for free</p>
+
 </div>
 
-<script src="../public/js/authUser.js"></script>
+
+<div class="container">
+  <div class="form-container">
+    <div class="form-heading">
+      <h5>Create New Account</h5>
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="username">New Username</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="New username">
+      </div>
+      <div class="form-group">
+        <label for="password">New Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="New password">
+        <small id="passwordHelpInline" class="text-muted">Must be at least 6 characters long.</small>
+      </div>
+      <button type="button" class="btn btn-primary" id="registerUser">Register User</button>
+    </form>
+  </div>
+
+  <div class="form-container">
+    <div class="form-heading">
+      <h5>Login User</h5>
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="lUsername">Username</label>
+        <input type="text" name="lUsername" id="lUsername" class="form-control" placeholder="Enter your username here">
+      </div>
+      <div class="form-group">
+        <label for="lPassword">Password</label>
+        <input type="password" name="lPassword" id="lPassword" class="form-control"
+          placeholder="Enter your password here">
+      </div>
+      <br>
+      <button type="button" class="btn btn-primary" id="loginUser">Login User</button>
+    </form>
+  </div>
+</div>
+
+<script src="../js/authUser.js"></script>

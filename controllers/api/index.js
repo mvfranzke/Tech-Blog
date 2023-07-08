@@ -1,3 +1,5 @@
+//this is where we set up connection of postRoutes and userRoutes
+
 //bring in our router
 const router = require("express").Router();
 
