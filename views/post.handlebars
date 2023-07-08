@@ -1,0 +1,27 @@
+<div>
+  <hr>
+  <div>
+    <h3>{{title}}</h3>
+    <h5>User: {{user.username}}</h5>
+    <p>{{body}}</p>
+  </div>
+  <hr>
+  <hr>
+  <h5>Update</h5>
+  <form>
+    <p>
+      <label for="title">Post Title</label>
+      <input type="text" name="title" id="title" placeholder="{{title}}">
+    </p>
+    <p>
+      <label for="body">Content</label>
+      <textarea name="body" id="body" cols="30" rows="10" placeholder="{{body}}"></textarea>
+    </p>
+    <button id="editPost" data-id="{{id}}">Update</button>
+  </form>
+  <button id="deletePost" data-id="{{id}}">Delete</button>
+  <hr>
+  <a href="/">Back</a>
+</div>
+
+<script src= "../public/js/editPost.js"></script>
