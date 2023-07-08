@@ -1,18 +1,16 @@
-//import sequelize to handle our database in mysql
-const Sequelize = require("sequelize");
+//declare a router using requiring of express and running the router method
+const router = require("express").Router();
 
+//bring in the API routes from API folder
+const apiRoutes = require("./api");
+//bring in viewRoutes from the viewRoutes file
+const viewRoutes = require("./viewRoutes");
 
-//set up for the sequelize so it knows our mysql password, user and database we created
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: 'localhost',
-    dialect: 'mysql', 
-    port: 3306
-  }
-)
+//we're going to tell the router that if there's no prefix, we will send it to the viewRoutes
+router.use("/", viewRoutes);
 
-//export it so it can be used in other file
-module.exports = sequelize
+//if there's a prefix api, we will send it to API routes
+router.use("/api", apiRoutes);
+
+//we export out the routers
+module.exports = router;
