@@ -34,13 +34,13 @@ router.post("/login", async (req, res) => {
     });
 
     if (!user) {
-      res.status(400).json({ message: "User not found!" });
+      res.status(410).json({ message: "User not found!" });
     }
 
     const validPw = user.checkPassword(req.body.password);
 
     if (!validPw) {
-      res.status(400).json({ message: "User not found!" });
+      res.status(410).json({ message: "User not found!" });
     }
 
     req.session.save(() => {
@@ -56,11 +56,17 @@ router.post("/login", async (req, res) => {
 });
 
 
-
-
 //logs out a user
-router.post("/logout", async (req, res) => {});
-
+router.post("/logout", async (req, res) => {
+  
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(200).end();
+    });
+  } else {
+    res.status(410).end();
+  }
+});
 
 
 
