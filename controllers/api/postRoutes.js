@@ -33,23 +33,23 @@ router.put("/:id", withAuth, async (req, res) => {
 
 
 
+router.delete("/:id", withAuth, async (req, res) => {
+  try {
+    const [affectedRows] = await Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
 
-
-router.delete("/:id", withAuth, async (req, res) => {});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 
