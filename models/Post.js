@@ -8,3 +8,14 @@ const sequelize = require('../config')
 class Post extends Model {}
 
 
+//initialize the column inside the post table
+Post.init({
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  body: {
+    type: DataTypes.STRING,
+    allowNull: false
+  }
+},
