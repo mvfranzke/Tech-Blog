@@ -1,9 +1,10 @@
+//import express router
 const router = require("express").Router();
 
 //import user table
 const { User } = require("../../models");
 
-//new user creation
+//router for new user creation
 router.post("/", async (req, res) => {
   try {
     const newUser = await User.create({
@@ -23,7 +24,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//login
+//router for user login
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({
@@ -54,9 +55,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
-//logout
+//router for when user logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
+    //destroy the current session
     req.session.destroy(() => {
       res.status(200).end();
     });
@@ -65,4 +67,5 @@ router.post("/logout", (req, res) => {
   }
 });
 
+//exports router to be used in other file
 module.exports = router;

@@ -1,4 +1,3 @@
-//this is where we set up connection of controllers->API and controller->viewRoutes
 
 //declare a router using requiring of express and running the router method
 const router = require("express").Router();

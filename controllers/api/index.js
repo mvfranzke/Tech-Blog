@@ -1,9 +1,7 @@
-//this is where we set up connection of postRoutes and userRoutes
-
 //bring in our router
 const router = require("express").Router();
 
-//import both files, we're connecting
+//import both files userRoutes and postRouts, we're connecting
 const userRoutes = require("./userRoutes");
 const postRoutes = require("./postRoutes");
 

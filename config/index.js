@@ -1,7 +1,7 @@
 //import sequelize to handle our database in mysql
 const Sequelize = require("sequelize");
 
-//set up for the sequelize so it knows our mysql password, user and database we created
+//set up for sequelize to access database name, password and username
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(

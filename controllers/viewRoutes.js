@@ -1,7 +1,9 @@
+//import express router, user and post table and withAuth file
 const router = require("express").Router();
 const { User, Post } = require("../models");
 const withAuth = require("../utils/auth");
 
+//router to generate and map all post of user in homepage
 router.get("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({ include: [User] });
@@ -15,6 +17,7 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+//router to locate specific post by id
 router.get("/post/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, { include: [User] });
@@ -31,6 +34,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
   }
 });
 
+//router to handle current sessio, if user is logged in and there's a session can view the post page, otherwise will be prompte to login/register page
 router.get("/auth", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -40,4 +44,5 @@ router.get("/auth", (req, res) => {
   res.render("auth");
 });
 
+//exports router to be used in other file
 module.exports = router;
