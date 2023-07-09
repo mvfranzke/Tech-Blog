@@ -16,35 +16,35 @@ const exphbs = require("express-handlebars");
 //make express app
 const app = express();
 
-//this is how we connect index.js file inside the config folder, notice we didnt have to type down to index.js, whatever you export on the index of a folder becomes the entire export of the folder itself
+//connect index.js file inside the config folder, notice we didnt have to type down to index.js, whatever you export on the index of a folder becomes the entire export of the folder itself
 const sequelize = require("./config");
 
-//this is how we will connect the session to sequelize whenever the user login
+//will connect the session to sequelize whenever the user login
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const port = process.env.PORT || 3001;
 
-//now that we have express-session, we;re going to bring in an object and tell our app to use session with object inside
+//bring in an object and tell our app to use session with object inside
 //cookie properties
 app.use(
   session({
-    secret: process.env.SESSION_SECRET, //we also put the server secret session as it needs it
+    secret: process.env.SESSION_SECRET, 
     cookie: {
-      maxAge: 24 * 60 * 60 * 1000,
+      maxAge: 24 * 60 * 60 * 1000,//24 hrs
       httpOnly: true,
       secure: false,
       sameSite: "strict",
     },
     resave: false,
     saveUninitialized: true,
-    //this is how we implement session storage in sequelize
+    //implement session storage in sequelize
     store: new SequelizeStore({
       db: sequelize, // we pass down our database connection here
     }),
   })
 );
 
-//this is how we create express handle bar example
+//create express handle bar example
 const hbs = exphbs.create({});
 
 //then set up handlebars engine
@@ -74,8 +74,7 @@ app.listen(port, () => {
 });
 
 // Sync sequelize and start listening on the same port
-sequelize
-  .sync({ force: false })
+sequelize.sync({ force: false })
   .then(() => {
     console.log(`Sequelize synced successfully`);
   })
