@@ -29,7 +29,7 @@ Given a CMS Style blog site, user will first have to create a new account to log
 
 URL of Github repository : https://github.com/mvfranzke/Tech-Blog
 
-Video Link (user flow): 
+Video Link (user flow): https://drive.google.com/file/d/11L4UjozUntE7f-cddXkqF6u1iTU2xQLu/view
 
 Heroku Deployed Link: pending
 
