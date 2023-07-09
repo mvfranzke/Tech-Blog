@@ -34,7 +34,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
   }
 });
 
-//router to handle current sessio, if user is logged in and there's a session can view the post page, otherwise will be prompte to login/register page
+//router to handle current session, if user is logged in and there's a session can view the post page, otherwise will be prompte to login/register page
 router.get("/auth", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");

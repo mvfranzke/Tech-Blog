@@ -1,4 +1,3 @@
-//this is how we relate all of our tables
 
 //call the user and post.js
 const User = require("./User");

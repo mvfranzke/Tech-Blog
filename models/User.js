@@ -1,5 +1,3 @@
-//this is our table for the user
-
 //import the model(table) and datatypes(content types) property from sequelize, so we can create the table
 const { Model, DataTypes } = require("sequelize");
 
@@ -35,12 +33,12 @@ User.init(
       allowNull: false,
       //we're going to validate that what they type must be atleat 6 character
       validate: {
-        len: [4],
+        len: [6],
       },
     },
   },
 
-  //we're going to set up our hooks, it's got its own curly bracket. It will encryp password before it gets create and before it gets updated.
+  //we're going to set up our hooks, it's got its own curly bracket. It will encrypt password before it gets create and before it gets updated.
   {
     hooks: {
       beforeCreate: async (data) => {

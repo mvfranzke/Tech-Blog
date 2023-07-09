@@ -1,6 +1,5 @@
-document
-  .getElementById("loginUser")
-  .addEventListener("click", async (event) => {
+//event listener to verify user login and route them to post page
+document.getElementById("loginUser").addEventListener("click", async (event) => {
     const user = {
       username: document.getElementById("lUsername").value,
       password: document.getElementById("lPassword").value,
@@ -17,9 +16,8 @@ document
     document.location.replace("/");
   });
 
-document
-  .getElementById("registerUser")
-  .addEventListener("click", async (event) => {
+//event listener to save user new login credentials
+document.getElementById("registerUser").addEventListener("click", async (event) => {
     const user = {
       username: document.getElementById("username").value,
       password: document.getElementById("password").value,
