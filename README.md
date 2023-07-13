@@ -31,7 +31,7 @@ URL of Github repository : https://github.com/mvfranzke/Tech-Blog
 
 Video Link (user flow): https://drive.google.com/file/d/11L4UjozUntE7f-cddXkqF6u1iTU2xQLu/view
 
-Heroku Deployed Link: pending
+Heroku Deployed Link: https://tech-blog-mvfranzke-0d6e84c65085.herokuapp.com/auth
 
 ## Credits
 
