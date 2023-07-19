@@ -22,5 +22,5 @@ document.getElementById("createPost").addEventListener("click", async () => {
     },
   });
 
-  location.reload();
+  window.location.reload();
 });
