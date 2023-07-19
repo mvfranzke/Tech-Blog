@@ -33,6 +33,8 @@ Video Link (user flow): https://drive.google.com/file/d/11L4UjozUntE7f-cddXkqF6u
 
 Heroku Deployed Link: https://tech-blog-mvfranzke-0d6e84c65085.herokuapp.com/auth
 
+![Heroku Page Screenshot](/images/heroku screenshot.jpg "Heroku Landing Page")
+
 ## Credits
 
 Below are additional resources/tutorial I used:
