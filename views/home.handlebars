@@ -1,0 +1,14 @@
+<a href="/" id="home" class="btn btn-primary">Back</a>
+
+<div class="auth-container">
+  {{#each posts as |post|}}
+  <hr>
+  <div>
+    <h3>Title: {{post.title}}</h3>
+    <h5>Author: {{post.user.username}}</h5>
+    <p>Content: {{post.body}}</p>
+
+  </div>
+  <hr>
+  {{/each}}
+</div>

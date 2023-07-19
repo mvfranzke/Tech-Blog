@@ -35,7 +35,7 @@ router.put("/:id", withAuth, async (req, res) => {
 //router to delete post using post id
 router.delete("/:id", withAuth, async (req, res) => {
   try {
-    const [affectedRows] = await Post.destroy({
+    const [affectedRows] = Post.destroy({
       where: {
         id: req.params.id,
       },
@@ -53,3 +53,4 @@ router.delete("/:id", withAuth, async (req, res) => {
 
 //export router to be used in other file
 module.exports = router;
+
